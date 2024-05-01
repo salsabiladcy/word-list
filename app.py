@@ -107,7 +107,6 @@ def delete_word():
         'result': 'success',
         'msg': f'the word, {word}, was delete',
     })
-
 @app.route('/api/get_exs', methods=['GET'])
 def get_exs():
     word = request.args.get('word')
@@ -118,10 +117,7 @@ def get_exs():
             'example': example.get('example'),
             'id': str(example.get('_id')),
         })
-    return jsonify({
-        "result": "success",
-        "example" : examples
-    })
+    return jsonify({'result': 'success', 'examples': examples})
 
 @app.route('/api/save_ex', methods=['POST'])
 def save_ex():
